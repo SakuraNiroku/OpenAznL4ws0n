@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="人生自古谁无死？不幸地，aznL4ws0n 已经身亡，因此无法答复您的提问，让我们永远缅怀他。">
+  <title>{{TITLE}}</title>
+  <link rel="icon" type="image/png" sizes="128x128" href="assets/icon.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="manifest.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <aside class="sidebar" id="sidebar" aria-label="目录导航">
+    <a class="brand" href="#"><img class="brand-symbol" src="assets/icon.png" alt="" width="42" height="42"><span>aznL4ws0n<span class="brand-caption">THE INTERNET ARCHIVE</span></span></a>
+    <button class="icon-button sidebar-close" id="sidebar-close" aria-label="关闭目录">✕</button>
+    <div class="sidebar-label">馆藏目录 <span id="directory-count"></span></div>
+    <nav id="tree" aria-label="文件夹"></nav>
+    <div class="sidebar-bottom"><span class="status-dot"></span> 留住每一个字节 <span class="edition">OPEN ARCHIVE / 001</span></div>
+  </aside>
+  <div class="page">
+    <header class="topbar">
+      <button class="icon-button menu-button" id="menu-toggle" aria-label="打开目录" aria-expanded="false" aria-controls="sidebar">☰</button>
+      <span class="topbar-caption">一份可以翻阅的互联网记忆</span>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索文件或文字内容…" aria-label="搜索全站文件与文字"><kbd>/</kbd></label>
+    </header>
+    <main id="main">
+      <section class="hero" id="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> DIGITAL MEMORIES, COLLECTED.</div>
+          <h1 id="archive-title">{{TITLE}}</h1>
+          <p id="memorial-intro">人生自古谁无死？不幸地，aznL4ws0n 已经身亡，因此无法答复您的提问，让我们永远缅怀他。</p>
+          <div class="hero-actions"><button class="flower-button" id="offer-flower" type="button"><span class="flower-symbol" aria-hidden="true">✿</span> 献一束花</button><a class="hero-link" href="#collection">翻阅馆藏 <span aria-hidden="true">↗</span></a></div>
+          <div class="flower-status" id="flower-status" role="status" aria-live="polite" aria-atomic="true">献上一束花，寄托思念。</div>
+        </div>
+        <figure class="memorial-portrait"><div class="memorial-image-wrap" id="memorial-image-wrap"><img class="memorial-image" src="assets/dead.jpg" alt="一朵盛开的白色百合，寄托对 aznL4ws0n 的思念" width="250" height="333"></div><figcaption>永远缅怀 · aznL4ws0n</figcaption></figure>
+        <div class="hero-footer"><span>一个开放的个人档案</span><span>文字 · 图像 · 生活切片</span></div>
+      </section>
+      <section class="stats" aria-label="馆藏统计"><div><span class="stat-label">收录文件</span><strong id="file-count">0</strong><span class="stat-note">份记忆</span></div><div><span class="stat-label">图片馆藏</span><strong id="image-count">0</strong><span class="stat-note">个瞬间</span></div><div><span class="stat-label">档案目录</span><strong id="folder-count">0</strong><span class="stat-note">个分类</span></div><div><span class="stat-label">馆藏大小</span><strong id="total-size">0</strong><span class="stat-note">本地留存</span></div></section>
+      <section class="collection" id="collection">
+        <div class="collection-heading"><div><div class="eyebrow">EXPLORE THE COLLECTION</div><h2 id="collection-title">全部馆藏</h2></div><div class="view-controls" aria-label="显示方式"><button id="grid-view" class="selected" aria-label="卡片视图" aria-pressed="true">▦</button><button id="list-view" aria-label="列表视图" aria-pressed="false">☷</button></div></div>
+        <div class="collection-toolbar"><nav id="breadcrumbs" aria-label="当前位置"></nav><div class="filters" role="group" aria-label="按文件类型筛选"><button data-filter="all" class="selected" aria-pressed="true">全部</button><button data-filter="image" aria-pressed="false">图片</button><button data-filter="text" aria-pressed="false">文字</button><button data-filter="file" aria-pressed="false">其他</button></div></div>
+        <div class="results-meta"><span id="result-count" aria-live="polite"></span><span>按文件名排序</span></div>
+        <div id="entries" class="entries"></div>
+        <div class="empty" id="empty" hidden><span aria-hidden="true">⌕</span><h3>这里还没有找到记忆</h3><p>试试其他关键词，或查看全部馆藏。</p><button id="reset">查看全部馆藏</button></div>
+      </section>
+      <footer class="footer"><span id="footer-title">{{TITLE}}</span><span>为记忆留一个位置。 <span aria-hidden="true">↗</span></span></footer>
+      <noscript><p>请启用 JavaScript 以浏览目录、搜索和预览文件。原始文件保存在 files/ 目录中。</p></noscript>
+    </main>
+  </div>
+  <dialog id="preview" aria-labelledby="preview-name"><div class="preview-header"><div><span class="eyebrow" id="preview-path"></span><h2 id="preview-name"></h2></div><button class="icon-button" id="close-preview" aria-label="关闭预览">✕</button></div><div id="preview-content"></div><div class="preview-footer"><span id="preview-details"></span><a id="download" class="download" download>下载原文件 <span aria-hidden="true">↓</span></a></div></dialog>
+</body>
+</html>
